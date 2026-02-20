@@ -16,7 +16,7 @@ jobs:
     - name: Instalar Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 20 
+        node-version: 20
 
     - name: Instalar dependencias
       run: npm ci
@@ -30,6 +30,8 @@ jobs:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         password: ${{ secrets.SSH_PASSWORD }}
-        source: "dist/examen-angular/browser/*"
+        # Basado en tu log de consola:
+        source: "dist/examen-angular/*"
         target: "/var/www/html/examen"
-        strip_components: 3
+        strip_components: 2
+        
