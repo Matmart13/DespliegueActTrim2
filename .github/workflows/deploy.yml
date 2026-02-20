@@ -31,7 +31,7 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         password: ${{ secrets.SSH_PASSWORD }}
         # Basado en tu log de consola:
-        source: "dist/examen-angular/*"
+        source: "dist/examen-angular/browser/*"
         target: "/var/www/html/examen"
-        strip_components: 2
-        
+        # Subimos a 3 para que ignore: 1(dist), 2(examen-angular), 3(browser)
+        strip_components: 3
